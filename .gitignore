@@ -25,3 +25,8 @@ hs_err_pid*
 # misc
 .DS_Store
 .metadata
+build/
+bin/
+.settings/
+.project/
+.classpath/
