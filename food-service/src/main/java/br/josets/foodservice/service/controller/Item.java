@@ -2,21 +2,23 @@ package br.josets.foodservice.service.controller;
 
 public class Item {
 
-	private String meal;
+	private String name = "";
 	
-	private Float price;
+	private Float price = 0f;
 
-	public Item(String meal, Float price) {
-		this.meal = meal;
+	Item() {}
+	
+	public Item(String name, Float price) {
+		this.name = name;
 		this.price = price;
 	}
 
-	public String getMeal() {
-		return meal;
+	public String getName() {
+		return name;
 	}
 
-	public void setMeal(String meal) {
-		this.meal = meal;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Float getPrice() {
