@@ -1,12 +1,12 @@
-package br.josets.foodservice.service;
+package br.josets.foodservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ServiceApplication {
+public class FoodServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ServiceApplication.class, args);
+		SpringApplication.run(FoodServiceApplication.class, args);
 	}
 }

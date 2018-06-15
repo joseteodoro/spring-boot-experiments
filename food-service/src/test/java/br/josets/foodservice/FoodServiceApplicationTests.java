@@ -1,4 +1,4 @@
-package br.josets.foodservice.service;
+package br.josets.foodservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ServiceApplicationTests {
+public class FoodServiceApplicationTests {
 
 	@Test
 	public void contextLoads() {
