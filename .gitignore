@@ -27,6 +27,6 @@ hs_err_pid*
 .metadata
 build/
 bin/
-*/.settings/*
-*/.project/*
-*/.classpath/*
+*/.settings/
+*/.project/
+*/.classpath/
