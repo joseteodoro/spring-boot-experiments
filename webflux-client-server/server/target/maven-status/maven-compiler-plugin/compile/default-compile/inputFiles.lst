@@ -1,7 +1,0 @@
-/Users/josets/Developer/spring-boot-experiments/webflux-client-server/server/src/main/java/br/josets/webflux/server/repository/HighwayTrafficSimulator.java
-/Users/josets/Developer/spring-boot-experiments/webflux-client-server/server/src/main/java/br/josets/webflux/server/model/Vehicle.java
-/Users/josets/Developer/spring-boot-experiments/webflux-client-server/server/src/main/java/br/josets/webflux/server/ServerApplication.java
-/Users/josets/Developer/spring-boot-experiments/webflux-client-server/server/src/main/java/br/josets/webflux/server/repository/HighwayUtilities.java
-/Users/josets/Developer/spring-boot-experiments/webflux-client-server/server/src/main/java/br/josets/webflux/server/vehicles/HighwayRouter.java
-/Users/josets/Developer/spring-boot-experiments/webflux-client-server/server/src/main/java/br/josets/webflux/server/repository/HighwayTraffic.java
-/Users/josets/Developer/spring-boot-experiments/webflux-client-server/server/src/main/java/br/josets/webflux/server/vehicles/HighwayHandler.java
