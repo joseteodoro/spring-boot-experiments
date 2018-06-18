@@ -6,4 +6,8 @@ import org.springframework.stereotype.Repository;
 import br.josets.foodserviceexample.model.Food;
 
 @Repository
-public interface FoodDAO extends JpaRepository<Food, Long>  {}
+public interface FoodDAO extends JpaRepository<Food, Long>  {
+
+	Food findByName(String foodName);
+	
+}

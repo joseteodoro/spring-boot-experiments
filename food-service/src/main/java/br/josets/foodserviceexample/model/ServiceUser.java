@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class ServiceUser {
 	
 	@Id
 	@GeneratedValue
@@ -58,7 +58,7 @@ public class User {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
+		ServiceUser other = (ServiceUser) obj;
 		if (userId == null) {
 			if (other.userId != null)
 				return false;
