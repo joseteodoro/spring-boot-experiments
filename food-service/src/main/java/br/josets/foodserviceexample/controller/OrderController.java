@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
+import br.josets.foodserviceexample.amqp.AMQPSender;
 import br.josets.foodserviceexample.controller.projections.FoodProjection;
 import br.josets.foodserviceexample.controller.projections.OrderProjection;
 import br.josets.foodserviceexample.exceptions.NotFoundException;
@@ -35,6 +38,9 @@ public class OrderController {
 	@Autowired
 	private FoodDAO foodDao;
 	
+	@Autowired
+	private AMQPSender amqpSender;
+	
 	@GetMapping("/users/{userId}/orders")
 	public Set<UserOrder> listOrders(@PathVariable Long userId) {
 		ServiceUser foundUser = ModelUtilities.loadUser(userDao, userId);
@@ -43,9 +49,11 @@ public class OrderController {
 
 	@PostMapping("/users/{userId}/orders")
 	@ResponseStatus(HttpStatus.CREATED)
-	public UserOrder createOrder(@PathVariable Long userId, @RequestBody OrderProjection sentOrder) {
+	public UserOrder createOrder(@PathVariable Long userId, @RequestBody OrderProjection sentOrder) throws JsonProcessingException {
 		UserOrder filled = this.loadOrderItems(sentOrder, userId);
-		return dao.save(filled);
+		UserOrder saved = dao.save(filled);
+		amqpSender.send(saved);
+		return saved;
 	}
 	
 	private UserOrder loadOrderItems(OrderProjection sentOrder, Long userId) {

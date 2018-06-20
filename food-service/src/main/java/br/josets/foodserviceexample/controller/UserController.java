@@ -35,12 +35,12 @@ public class UserController {
 	}
 	
 	@GetMapping("/users/{userId}")
-	public ServiceUser add(@PathVariable(name="userId") Long userId) {
+	public ServiceUser add(@PathVariable(name="userId") String userId) {
 		return ModelUtilities.loadUser(dao, userId);
 	}
 	
 	@PostMapping("/users/{userId}")
-	public ServiceUser add(@PathVariable(name="userId") Long userId, @RequestBody ServiceUser userSent) throws NotFoundException {
+	public ServiceUser add(@PathVariable(name="userId") String userId, @RequestBody ServiceUser userSent) throws NotFoundException {
 		ServiceUser foundUser  = ModelUtilities.loadUser(dao, userId);
 		foundUser.setName(userSent.getName());
 		return dao.save(foundUser);
